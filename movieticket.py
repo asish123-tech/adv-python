@@ -36,7 +36,7 @@ class MovieBooking:
                     print("\n---- Booking Confirmation ----")
                     print("Movie:", movies[movie_choice - 1])
                     print("Seat:", seat_choice)
-                    print("Booking Successful ✅")
+                    print("Booking Successful !!")
                 else:
                     print("Seat Not Available!")
 

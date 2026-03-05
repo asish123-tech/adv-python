@@ -1,11 +1,9 @@
 # track vehicle, manage parking spaces, and enforce parking rules
-# Parent Class
 class Vehicle:
     def __init__(self, number):
         self.number = number
 
 
-# Child Classes
 class Car(Vehicle):
     pass
 
@@ -14,7 +12,7 @@ class Bike(Vehicle):
     pass
 
 
-# Parking Lot Class
+
 class ParkingLot:
     def __init__(self, spaces):
         self.total_spaces = spaces
@@ -39,7 +37,7 @@ class ParkingLot:
 
 # -------- Main Program --------
 
-spaces = int(input("Enter total parking spaces: "))
+spaces = 5
 lot = ParkingLot(spaces)
 
 while True:
@@ -67,7 +65,7 @@ while True:
         lot.remove()
 
     elif choice == 3:
-        
+
         print("Exiting...")
         break
 

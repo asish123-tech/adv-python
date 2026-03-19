@@ -8,92 +8,108 @@ def login():
     password = password_entry.get()
 
     if email == "asish@gmail.com" and password == "1234":
-        messagebox.showinfo("Login Status", "Login Successful")
+        messagebox.showinfo("Login Status", "Hala Madrid! Login Successful ⚽")
     else:
         messagebox.showerror("Login Status", "Invalid Email or Password")
 
 
 # ---------------- MAIN WINDOW ----------------
-root = Tk()  
-root.title("Student Login")
-root.iconbitmap("pixel2.ico")
-root.geometry("500x520")
-root.configure(bg="#121212")
+root = Tk()
+root.title("Real Madrid Login")
+root.iconbitmap("rmf.ico")
+root.geometry("520x560")
+root.configure(bg="#0a1f44")   # deep navy blue
 
 
 # ---------------- CARD FRAME ----------------
-card = Frame(root, bg="#1e1e1e")
-card.place(relx=0.5, rely=0.5, anchor=CENTER, width=360, height=430)
+card = Frame(root, bg="white")
+card.place(relx=0.5, rely=0.5, anchor=CENTER, width=380, height=520)  # 🔥 fixed height
 
 
-# ---------------- IMAGE ----------------
-img = Image.open("star.png")
-img = img.resize((80, 70))
+# ---------------- IMAGE (LOGO) ----------------
+img = Image.open("rmf.png")   # replace with Real Madrid logo if you have
+img = img.resize((90, 90))
 img = ImageTk.PhotoImage(img)
 
-img_label = Label(card, image=img, bg="#1e1e1e")
-img_label.pack(pady=(20,5))
+img_label = Label(card, image=img, bg="white")
+img_label.pack(pady=(25,10))
 
 
 # ---------------- TITLE ----------------
 title = Label(card,
-              text="ASISH BUCKS",
+              text="REAL MADRID",
               font=("Segoe UI",18,"bold"),
-              bg="#1e1e1e",
-              fg="#00c896")
-title.pack(pady=5)
+              bg="white",
+              fg="#0a1f44")
+title.pack()
+
+subtitle = Label(card,
+                 text="Member Login",
+                 font=("Segoe UI",10),
+                 bg="white",
+                 fg="grey")
+subtitle.pack(pady=(0,15))
 
 
 # ---------------- EMAIL ----------------
 email_label = Label(card,
                     text="Email",
-                    font=("Segoe UI",11),
-                    bg="#1e1e1e",
-                    fg="#cccccc")
-email_label.pack(anchor="w", padx=40, pady=(20,3))
+                    font=("Segoe UI",10,"bold"),
+                    bg="white",
+                    fg="#0a1f44")
+email_label.pack(anchor="w", padx=40)
 
 email_entry = Entry(card,
                     font=("Segoe UI",11),
-                    bg="#2a2a2a",
-                    fg="white",
-                    insertbackground="white",
-                    bd=0,
+                    bg="#f5f5f5",
+                    fg="black",
+                    bd=1,
+                    relief="solid",
                     width=28)
-email_entry.pack(padx=40, ipady=7)
+email_entry.pack(padx=40, pady=(5,15), ipady=6)
 
 
 # ---------------- PASSWORD ----------------
 password_label = Label(card,
                        text="Password",
-                       font=("Segoe UI",11),
-                       bg="#1e1e1e",
-                       fg="#cccccc")
-password_label.pack(anchor="w", padx=40, pady=(15,3))
+                       font=("Segoe UI",10,"bold"),
+                       bg="white",
+                       fg="#0a1f44")
+password_label.pack(anchor="w", padx=40)
 
 password_entry = Entry(card,
                        font=("Segoe UI",11),
-                       bg="#2a2a2a",
-                       fg="white",
-                       insertbackground="white",
-                       bd=0,
+                       bg="#f5f5f5",
+                       fg="black",
+                       bd=1,
+                       relief="solid",
                        show="*",
                        width=28)
-password_entry.pack(padx=40, ipady=7)
+password_entry.pack(padx=40, pady=(5,20), ipady=6)
 
 
 # ---------------- LOGIN BUTTON ----------------
 login_btn = Button(card,
-                   text="Login",
-                   font=("Segoe UI",12,"bold"),
-                   bg="#00c896",
-                   fg="black",
-                   activebackground="#00a87c",
-                   activeforeground="black",
+                   text="LOGIN",
+                   font=("Segoe UI",11,"bold"),
+                   bg="#0a1f44",
+                   fg="white",
+                   activebackground="#163d7a",
+                   activeforeground="white",
                    bd=0,
-                   padx=25,
-                   pady=8,
+                   padx=30,
+                   pady=10,
                    command=login)
-login_btn.pack(pady=30)
+login_btn.pack(pady=10)
+
+
+# ---------------- FOOTER ----------------
+footer = Label(card,
+               text="© Real Madrid Fan UI",
+               font=("Segoe UI",8),
+               bg="white",
+               fg="grey")
+footer.pack(side="bottom", pady=10)
 
 
 # ---------------- ENTER KEY LOGIN ----------------
